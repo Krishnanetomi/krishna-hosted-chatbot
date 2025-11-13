@@ -7,9 +7,9 @@
     <title>Document</title>
     <meta name="RATING" content="RTA-5042-1996-1400-1577-RTA" />
 
-    <!-- Add this CSP meta tag -->
+    <!-- CSP with 'unsafe-eval' allowed for testing -->
     <meta http-equiv="Content-Security-Policy"
-          content="default-src 'self'; script-src 'self' https://chatapps-qa-a.netomi.com; connect-src 'self' https://chatapps-qa-a.netomi.com; img-src 'self' data: https://chatapps-qa-a.netomi.com; style-src 'self' 'unsafe-inline'; frame-src https://chatapps-qa-a.netomi.com; object-src 'none'; base-uri 'self';">
+          content="default-src 'self'; script-src 'self' 'unsafe-eval' https://chatapps-qa-a.netomi.com; connect-src 'self' https://chatapps-qa-a.netomi.com; img-src 'self' data: https://chatapps-qa-a.netomi.com; style-src 'self' 'unsafe-inline'; frame-src https://chatapps-qa-a.netomi.com; object-src 'none'; base-uri 'self';">
 </head>
 <body>
     <button onclick="Netomi.chat.openWidget()">Support</button>
