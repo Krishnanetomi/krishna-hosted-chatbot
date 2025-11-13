@@ -7,22 +7,27 @@
   <title>Netomi Chat CSP Test</title>
   <meta name="RATING" content="RTA-5042-1996-1400-1577-RTA" />
 
-  <!-- Final CSP configuration -->
+  <!-- Final CSP allowing all required Netomi and third-party resources -->
   <meta http-equiv="Content-Security-Policy"
-        content="default-src 'self';
-                 script-src 'self' 'unsafe-inline' 'unsafe-eval' https://chatapps-qa-a.netomi.com;
-                 connect-src 'self' https://chatapps-qa-a.netomi.com;
-                 img-src 'self' data: https://chatapps-qa-a.netomi.com;
-                 style-src 'self' 'unsafe-inline' https://chatapps-qa-a.netomi.com;
-                 style-src-elem 'self' 'unsafe-inline' https://chatapps-qa-a.netomi.com;
-                 frame-src https://chatapps-qa-a.netomi.com;
-                 object-src 'none';
-                 base-uri 'self';">
+        content="
+          default-src 'self';
+          script-src 'self' 'unsafe-inline' 'unsafe-eval' https://chatapps-qa-a.netomi.com https://cdn.segment.com;
+          connect-src 'self' https://chatapps-qa-a.netomi.com https://a10jvu4u60lghw-ats.iot.us-east-1.amazonaws.com https://cdn.segment.com https://aistudio-cdata-qa.s3.amazonaws.com;
+          img-src 'self' data: https://chatapps-qa-a.netomi.com https://aistudio-cdata-qa.s3.amazonaws.com;
+          style-src 'self' 'unsafe-inline' https://chatapps-qa-a.netomi.com https://use.typekit.net;
+          style-src-elem 'self' 'unsafe-inline' https://chatapps-qa-a.netomi.com https://use.typekit.net;
+          font-src 'self' https://use.typekit.net https://chatapps-qa-a.netomi.com data:;
+          frame-src https://chatapps-qa-a.netomi.com;
+          object-src 'none';
+          base-uri 'self';
+        ">
 </head>
 <body>
   <button onclick="Netomi.chat.openWidget()">Support</button>
 
   <script>
+    console.log("✅ HTML updated and loaded successfully with final CSP configuration.");
+
     (function() {
       var ns = document.createElement('script');
       ns.src = 'https://chatapps-qa-a.netomi.com/app/script.js';
@@ -32,13 +37,15 @@
       var s = document.getElementsByTagName('script')[0];
       s.parentNode.insertBefore(ns, s);
       ns.onload = function () {
+        console.log("✅ Netomi chat script loaded successfully.");
         window.Netomi.chat.init(() => {
-          /* add publish events here */
+          console.log("✅ Netomi chat initialized successfully.");
         });
       };
     })();
+
     window.addEventListener("message", (event) => {
-      console.log("Received message:", event.data);
+      console.log("📩 Received message:", event.data);
     });
   </script>
 </body>
