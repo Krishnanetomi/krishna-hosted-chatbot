@@ -1,52 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Netomi Chat Universal CSP Test</title>
-  <meta name="RATING" content="RTA-5042-1996-1400-1577-RTA" />
-
-  <!-- Universal CSP for unrestricted testing -->
-  <meta http-equiv="Content-Security-Policy"
-        content="
-          default-src * 'unsafe-inline' 'unsafe-eval' data: blob:;
-          script-src * 'unsafe-inline' 'unsafe-eval' data: blob:;
-          connect-src * data: blob:;
-          img-src * data: blob:;
-          style-src * 'unsafe-inline' data:;
-          style-src-elem * 'unsafe-inline' data:;
-          font-src * data:;
-          frame-src * data:;
-          object-src * data:;
-          base-uri *;
-        ">
-</head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<meta name="RATING" content="RTA-5042-1996-1400-1577-RTA" /></head>
 <body>
-  <button onclick="Netomi.chat.openWidget()">Support</button>
-
-  <script>
-    console.log("🌐 HTML loaded with universal CSP — Build #20251113-01");
-
-    (function() {
-      var ns = document.createElement('script');
-      ns.src = 'https://chatapps-qa-a.netomi.com/app/script.js';
-      ns.type = 'text/javascript';
-      ns.async = true;
-      ns.setAttribute('botRefId', '7fa0f730-31dc-46f6-a510-193f5619ca75');
-      var s = document.getElementsByTagName('script')[0];
-      s.parentNode.insertBefore(ns, s);
-      ns.onload = function () {
-        console.log("✅ Netomi chat script loaded successfully — Build #20251113-01");
-        window.Netomi.chat.init(() => {
-          console.log("✅ Netomi chat initialized successfully — Build #20251113-01");
-        });
-      };
-    })();
-
+    <button onclick="Netomi.chat.openWidget()">Support</button>
+<script>
+  (function() {
+    var ns = document.createElement('script');
+    ns.src = ('https://.com/app/script.js')chatapps-eu.netomi;ns.type = 'text/javascript'; ns.async = true;
+    ns.setAttribute('botRefId', '5d860e6c-6aad-4df7-a91d-efd31651241f');
+    var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(ns, s);
+    ns.onload = function () {window.Netomi.chat.init(() => {/* add publish events here */})}})();
     window.addEventListener("message", (event) => {
-      console.log("📩 Received message (Build #20251113-01):", event.data);
-    });
-  </script>
-</body>
+   console.log("Received message:", event.data);
+        });
+</script>
 </html>
